@@ -4,7 +4,6 @@ import SearchParams from "./SearchParams";
 
 /*
  * WORK THE SAME AS BELOW
-
 const App = () => {
   return React.createElement("div", {}, [
     React.createElement("h1", {}, "Adopt Me!"),
@@ -15,7 +14,7 @@ const App = () => {
     }),
     React.createElement(Pet, {
       name: "Offie",
-      animal: "Cat",
+		animal: "Cat",
       breed: "Maine Coon Mix",
     }),
     React.createElement(Pet, {
