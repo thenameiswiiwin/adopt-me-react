@@ -1,5 +1,6 @@
 import { render } from "react-dom";
-import Pet from "./Pet";
+// import Pet from "./Pet";
+import SearchParams from "./SearchParams";
 
 /*
  * WORK THE SAME AS BELOW
@@ -30,9 +31,10 @@ const App = () => {
   return (
     <div>
       <h1>Adopt Me!</h1>
-      <Pet name="Sadie" animal="Dog" breed="Shepherd Chow Mix" />
+      {/* <Pet name="Sadie" animal="Dog" breed="Shepherd Chow Mix" />
       <Pet name="Offie" animal="Cat" breed="Maine Coon Mix" />
-      <Pet name="Sudo" animal="Dog" breed="Wheaten Terrier" />
+      <Pet name="Sudo" animal="Dog" breed="Wheaten Terrier" /> */}
+      <SearchParams />
     </div>
   );
 };
