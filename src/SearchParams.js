@@ -2,7 +2,8 @@ import { useState } from "react";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("Seattle, WA");
-  /* ABOVE IS DESTRUCTURING. WORK THE SAME AS ABOVE
+  /*
+   * ABOVE IS DESTRUCTURING. WORK THE SAME AS ABOVE
    const locationTuple = useState("Seattle, WA");
    const location = locationTuple[0];
    const setLocation = locationTuple[1];
