@@ -18,7 +18,6 @@ export default function useBreedList(animal) {
     async function requestBreedList() {
       setBreedList([]);
       setStatus("loading");
-
       const res = await fetch(
         `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
       );
@@ -28,7 +27,6 @@ export default function useBreedList(animal) {
       setStatus("loaded");
     }
   }, [animal]);
-  /* [animal] ==> Animal we get animal back from the function. The useEffect will run */
 
   return [breedList, status];
 }

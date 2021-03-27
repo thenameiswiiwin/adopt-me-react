@@ -17,7 +17,6 @@ const Results = ({ pets }) => {
             key={pet.id}
           />
         ))
-        /* PET COMPONENT. Need a unique key because using Map() */
       )}
     </div>
   );
