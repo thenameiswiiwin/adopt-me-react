@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import useBreedList from "../hooks/useBreedList";
+import { useState, useEffect } from "react";
 import Location from "./Location";
 import Animal from "./Animal";
 import Breed from "./Breed";
 import Button from "./Button";
+import useBreedList from "../hooks/useBreedList";
 import Results from "./Results";
 
 const SearchParams = () => {
-  const [animal, setAnimal] = useState("");
   const [location, setLocation] = useState("");
+  const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
   const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
@@ -27,14 +27,14 @@ const SearchParams = () => {
     setPets(json.pets);
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    requestPets();
+  };
+
   return (
     <div className="search-params">
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          requestPets();
-        }}
-      >
+      <form onSubmit={onSubmit}>
         <Location
           text="location"
           location={location}
