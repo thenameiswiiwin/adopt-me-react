@@ -16,7 +16,6 @@ const App = () => {
         <main>
           <Switch>
             <Route path="/details/:id">
-              {/* :id ==> is how you write a variables inside your Route. The variable will then get pass down as the property to the Details */}
               <Details />
             </Route>
             <Route path="/">
