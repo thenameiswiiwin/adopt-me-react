@@ -16,7 +16,7 @@ const COLORS = [
 ];
 
 const App = () => {
-  const themeHook = useState(COLORS); //pick favorite color in useState
+  const themeHook = useState(COLORS);
 
   return (
     <ThemeContext.Provider value={themeHook}>

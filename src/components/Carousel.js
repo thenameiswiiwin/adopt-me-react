@@ -10,13 +10,13 @@ class Carousel extends Component {
 
   handleIndexClick = (event) => {
     this.setState({
-      active: +event.target.dataset.index, // Come back as a string, that is why add the plus sign to change to number
+      active: +event.target.dataset.index,
     });
-  }; // Turn this into a function. So when you call the function. this. is getting call from whereever it is created not whereever it is being called from.
+  };
 
   render() {
-    const { active } = this.state; // One state is mutable (changeable).
-    const { images } = this.props; // One way data flow. State come from parent, and only the parent can change props. The only thing that can modify state is the component that contain it.
+    const { active } = this.state;
+    const { images } = this.props;
     return (
       <div className="carousel">
         <img src={images[active]} alt="animal" />
@@ -26,7 +26,7 @@ class Carousel extends Component {
             <img
               key={photo}
               src={photo}
-              onClick={this.handleIndexClick} // Will give error because img should be a button
+              onClick={this.handleIndexClick}
               data-index={index}
               className={index === active ? "active" : ""}
               alt="animal thumbnail"

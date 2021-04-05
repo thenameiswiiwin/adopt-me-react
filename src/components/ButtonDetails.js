@@ -1,5 +1,9 @@
-const ButtonDetails = ({ themeHook, name }) => {
-  return <button style={{ backgroundColor: themeHook }}>Adopt {name}</button>;
+const ButtonDetails = ({ name, themeHook, onClick }) => {
+  return (
+    <button style={{ backgroundColor: themeHook }} onClick={onClick}>
+      Adopt {name}
+    </button>
+  );
 };
 
 export default ButtonDetails;
