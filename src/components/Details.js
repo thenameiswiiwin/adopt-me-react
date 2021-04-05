@@ -2,6 +2,8 @@ import { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
+import ButtonDetails from "./ButtonDetails";
+import ThemeContext from "./ThemeContext";
 
 class Details extends Component {
   state = { loading: true }; // Must introduce babel transform (babel eslint parcer) to make this work
@@ -42,7 +44,13 @@ class Details extends Component {
           <h2>
             {animal} - {breed} - {city}, {state}
           </h2>
-          <button>Adopt {name}</button>
+
+          <ThemeContext.Consumer>
+            {([themeHook]) => (
+              <ButtonDetails themeHook={themeHook} name={name} />
+            )}
+          </ThemeContext.Consumer>
+
           <p>{description}</p>
         </div>
       </div>
@@ -52,10 +60,10 @@ class Details extends Component {
 
 const DetailsWithRouter = withRouter(Details);
 
-export default function DetailsErrorBoundary() {
+export default function DetailsErrorBoundary(props) {
   return (
     <ErrorBoundary>
-      <DetailsWithRouter />
+      <DetailsWithRouter {...props} />
     </ErrorBoundary>
   );
 }

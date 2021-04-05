@@ -12,7 +12,7 @@ class Carousel extends Component {
     this.setState({
       active: +event.target.dataset.index, // Come back as a string, that is why add the plus sign to change to number
     });
-  };
+  }; // Turn this into a function. So when you call the function. this. is getting call from whereever it is created not whereever it is being called from.
 
   render() {
     const { active } = this.state; // One state is mutable (changeable).

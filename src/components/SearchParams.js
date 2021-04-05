@@ -1,17 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Location from "./Location";
 import Animal from "./Animal";
 import Breed from "./Breed";
-import Button from "./Button";
+import Theme from "./Theme";
+import ButtonSearchParam from "./ButtonSearchParam";
+import ThemeContext from "./ThemeContext";
 import useBreedList from "../hooks/useBreedList";
 import Results from "./Results";
 
-const SearchParams = () => {
+const SearchParams = ({ COLORS }) => {
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
   const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
+  const [themeHook, setThemeHook] = useContext(ThemeContext);
 
   const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
@@ -52,7 +55,13 @@ const SearchParams = () => {
           breeds={breeds}
           onChange={(e) => setBreed(e.target.value)}
         />
-        <Button />
+        <Theme
+          text="theme"
+          themeHook={themeHook}
+          COLORS={COLORS}
+          onChange={(e) => setThemeHook(e.target.value)}
+        />
+        <ButtonSearchParam themeHook={themeHook} />
       </form>
       <Results pets={pets} />
     </div>
